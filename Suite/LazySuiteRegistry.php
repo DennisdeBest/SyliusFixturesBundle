@@ -42,7 +42,7 @@ final class LazySuiteRegistry implements SuiteRegistryInterface
      * @param string $name
      * @param array $configuration
      */
-    public function addSuite(string $name, array $configuration): void
+    public function addSuite(string $name, array $configuration)
     {
         $this->suiteDefinitions[$name] = $configuration;
     }
@@ -50,7 +50,7 @@ final class LazySuiteRegistry implements SuiteRegistryInterface
     /**
      * {@inheritdoc}
      */
-    public function getSuite(string $name): SuiteInterface
+    public function getSuite(string $name)
     {
         if (isset($this->suites[$name])) {
             return $this->suites[$name];
@@ -66,7 +66,7 @@ final class LazySuiteRegistry implements SuiteRegistryInterface
     /**
      * {@inheritdoc}
      */
-    public function getSuites(): array
+    public function getSuites()
     {
         $suites = [];
         foreach (array_keys($this->suiteDefinitions) as $name) {

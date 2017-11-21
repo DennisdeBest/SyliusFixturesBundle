@@ -22,10 +22,10 @@ interface ListenerRegistryInterface
      *
      * @throws ListenerNotFoundException
      */
-    public function getListener(string $name): ListenerInterface;
+    public function getListener(string $name);
 
     /**
      * @return array|ListenerInterface[] Name indexed
      */
-    public function getListeners(): array;
+    public function getListeners();
 }

@@ -49,7 +49,7 @@ final class Suite implements SuiteInterface
      * @param array $options
      * @param int $priority
      */
-    public function addFixture(FixtureInterface $fixture, array $options, int $priority = 0): void
+    public function addFixture(FixtureInterface $fixture, array $options, int $priority = 0)
     {
         $this->fixtures->insert(['fixture' => $fixture, 'options' => $options], $priority);
     }
@@ -59,7 +59,7 @@ final class Suite implements SuiteInterface
      * @param array $options
      * @param int $priority
      */
-    public function addListener(ListenerInterface $listener, array $options, int $priority = 0): void
+    public function addListener(ListenerInterface $listener, array $options, int $priority = 0)
     {
         $this->listeners->insert(['listener' => $listener, 'options' => $options], $priority);
     }
@@ -67,7 +67,7 @@ final class Suite implements SuiteInterface
     /**
      * {@inheritdoc}
      */
-    public function getName(): string
+    public function getName()
     {
         return $this->name;
     }
@@ -75,7 +75,7 @@ final class Suite implements SuiteInterface
     /**
      * {@inheritdoc}
      */
-    public function getFixtures(): iterable
+    public function getFixtures()
     {
         $fixtures = clone $this->fixtures;
         foreach ($fixtures as $fixture) {
@@ -86,7 +86,7 @@ final class Suite implements SuiteInterface
     /**
      * {@inheritdoc}
      */
-    public function getListeners(): iterable
+    public function getListeners()
     {
         $listeners = clone $this->listeners;
         foreach ($listeners as $listener) {

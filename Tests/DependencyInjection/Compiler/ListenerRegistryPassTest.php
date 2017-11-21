@@ -24,7 +24,7 @@ final class ListenerRegistryPassTest extends AbstractCompilerPassTestCase
     /**
      * @test
      */
-    public function it_registers_listeners(): void
+    public function it_registers_listeners()
     {
         $this->setDefinition('sylius_fixtures.listener_registry', new Definition());
         $this->setDefinition('acme.listener', (new Definition())->addTag('sylius_fixtures.listener'));
@@ -41,7 +41,7 @@ final class ListenerRegistryPassTest extends AbstractCompilerPassTestCase
     /**
      * {@inheritdoc}
      */
-    protected function registerCompilerPass(ContainerBuilder $container): void
+    protected function registerCompilerPass(ContainerBuilder $container)
     {
         $container->addCompilerPass(new ListenerRegistryPass());
     }

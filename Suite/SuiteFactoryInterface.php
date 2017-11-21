@@ -21,5 +21,5 @@ interface SuiteFactoryInterface
      *
      * @return SuiteInterface
      */
-    public function createSuite(string $name, array $configuration): SuiteInterface;
+    public function createSuite(string $name, array $configuration);
 }

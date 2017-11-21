@@ -22,7 +22,7 @@ final class Configuration implements ConfigurationInterface
     /**
      * {@inheritdoc}
      */
-    public function getConfigTreeBuilder(): TreeBuilder
+    public function getConfigTreeBuilder()
     {
         $treeBuilder = new TreeBuilder();
         $rootNode = $treeBuilder->root('sylius_fixtures');
@@ -35,7 +35,7 @@ final class Configuration implements ConfigurationInterface
     /**
      * @param ArrayNodeDefinition $rootNode
      */
-    private function buildSuitesNode(ArrayNodeDefinition $rootNode): void
+    private function buildSuitesNode(ArrayNodeDefinition $rootNode)
     {
         /** @var ArrayNodeDefinition $suitesNode */
         $suitesNode = $rootNode
@@ -70,7 +70,7 @@ final class Configuration implements ConfigurationInterface
     /**
      * @param ArrayNodeDefinition $suitesNode
      */
-    private function buildFixturesNode(ArrayNodeDefinition $suitesNode): void
+    private function buildFixturesNode(ArrayNodeDefinition $suitesNode)
     {
         /** @var ArrayNodeDefinition $fixturesNode */
         $fixturesNode = $suitesNode
@@ -88,7 +88,7 @@ final class Configuration implements ConfigurationInterface
     /**
      * @param ArrayNodeDefinition $suitesNode
      */
-    private function buildListenersNode(ArrayNodeDefinition $suitesNode): void
+    private function buildListenersNode(ArrayNodeDefinition $suitesNode)
     {
         /** @var ArrayNodeDefinition $listenersNode */
         $listenersNode = $suitesNode
@@ -104,7 +104,7 @@ final class Configuration implements ConfigurationInterface
     /**
      * @param ArrayNodeDefinition $node
      */
-    private function buildAttributesNode(ArrayNodeDefinition $node): void
+    private function buildAttributesNode(ArrayNodeDefinition $node)
     {
         $attributesNodeBuilder = $node->canBeUnset()->children();
         $attributesNodeBuilder->integerNode('priority')->defaultValue(0);

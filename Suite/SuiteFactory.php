@@ -53,7 +53,7 @@ final class SuiteFactory implements SuiteFactoryInterface
     /**
      * {@inheritdoc}
      */
-    public function createSuite(string $name, array $configuration): SuiteInterface
+    public function createSuite(string $name, array $configuration)
     {
         Assert::keyExists($configuration, 'fixtures');
         Assert::keyExists($configuration, 'listeners');
@@ -76,7 +76,7 @@ final class SuiteFactory implements SuiteFactoryInterface
      * @param string $fixtureAlias
      * @param array $fixtureAttributes
      */
-    private function addFixtureToSuite(Suite $suite, string $fixtureAlias, array $fixtureAttributes): void
+    private function addFixtureToSuite(Suite $suite, string $fixtureAlias, array $fixtureAttributes)
     {
         Assert::keyExists($fixtureAttributes, 'name');
         Assert::keyExists($fixtureAttributes, 'options');
@@ -93,7 +93,7 @@ final class SuiteFactory implements SuiteFactoryInterface
      * @param string $listenerName
      * @param array $listenerAttributes
      */
-    private function addListenerToSuite(Suite $suite, string $listenerName, array $listenerAttributes): void
+    private function addListenerToSuite(Suite $suite, string $listenerName, array $listenerAttributes)
     {
         Assert::keyExists($listenerAttributes, 'options');
 

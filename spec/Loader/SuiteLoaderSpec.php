@@ -21,12 +21,12 @@ use Sylius\Bundle\FixturesBundle\Suite\SuiteInterface;
 
 final class SuiteLoaderSpec extends ObjectBehavior
 {
-    function let(FixtureLoaderInterface $fixtureLoader): void
+    function let(FixtureLoaderInterface $fixtureLoader)
     {
         $this->beConstructedWith($fixtureLoader);
     }
 
-    function it_implements_suite_loader_interface(): void
+    function it_implements_suite_loader_interface()
     {
         $this->shouldImplement(SuiteLoaderInterface::class);
     }
@@ -36,7 +36,7 @@ final class SuiteLoaderSpec extends ObjectBehavior
         SuiteInterface $suite,
         FixtureInterface $firstFixture,
         FixtureInterface $secondFixture
-    ): void {
+    ) {
         $suite->getFixtures()->will(function () use ($firstFixture, $secondFixture) {
             yield $firstFixture->getWrappedObject() => ['options 1'];
             yield $secondFixture->getWrappedObject() => ['options 2'];

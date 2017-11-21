@@ -21,7 +21,7 @@ final class SyliusFixturesExtensionTest extends AbstractExtensionTestCase
     /**
      * @test
      */
-    public function it_does_not_crash_if_no_suite_is_configured(): void
+    public function it_does_not_crash_if_no_suite_is_configured()
     {
         $this->load();
     }
@@ -29,7 +29,7 @@ final class SyliusFixturesExtensionTest extends AbstractExtensionTestCase
     /**
      * @test
      */
-    public function it_registers_configured_suites(): void
+    public function it_registers_configured_suites()
     {
         $this->load(['suites' => [
             'suite_name' => [],

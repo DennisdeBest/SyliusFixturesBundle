@@ -20,12 +20,12 @@ use Sylius\Bundle\FixturesBundle\Fixture\FixtureRegistryInterface;
 
 final class FixtureRegistrySpec extends ObjectBehavior
 {
-    function it_implements_fixture_registry_interface(): void
+    function it_implements_fixture_registry_interface()
     {
         $this->shouldImplement(FixtureRegistryInterface::class);
     }
 
-    function it_has_a_fixtures(FixtureInterface $fixture): void
+    function it_has_a_fixtures(FixtureInterface $fixture)
     {
         $fixture->getName()->willReturn('fixture');
 

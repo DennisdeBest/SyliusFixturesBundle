@@ -20,12 +20,12 @@ use Sylius\Bundle\FixturesBundle\Suite\SuiteInterface;
 
 final class FixtureLoaderSpec extends ObjectBehavior
 {
-    function it_implements_fixture_loader_interface(): void
+    function it_implements_fixture_loader_interface()
     {
         $this->shouldImplement(FixtureLoaderInterface::class);
     }
 
-    function it_loads_a_fixture(SuiteInterface $suite, FixtureInterface $fixture): void
+    function it_loads_a_fixture(SuiteInterface $suite, FixtureInterface $fixture)
     {
         $fixture->load(['options'])->shouldBeCalled();
 

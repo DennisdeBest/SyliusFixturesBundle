@@ -25,7 +25,7 @@ final class FixtureRegistry implements FixtureRegistryInterface
     /**
      * @param FixtureInterface $fixture
      */
-    public function addFixture(FixtureInterface $fixture): void
+    public function addFixture(FixtureInterface $fixture)
     {
         Assert::keyNotExists($this->fixtures, $fixture->getName(), 'Fixture with name "%s" is already registered.');
 
@@ -35,7 +35,7 @@ final class FixtureRegistry implements FixtureRegistryInterface
     /**
      * {@inheritdoc}
      */
-    public function getFixture(string $name): FixtureInterface
+    public function getFixture(string $name)
     {
         if (!isset($this->fixtures[$name])) {
             throw new FixtureNotFoundException($name);
@@ -47,7 +47,7 @@ final class FixtureRegistry implements FixtureRegistryInterface
     /**
      * {@inheritdoc}
      */
-    public function getFixtures(): array
+    public function getFixtures()
     {
         return $this->fixtures;
     }

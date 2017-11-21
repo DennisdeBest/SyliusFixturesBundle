@@ -22,7 +22,7 @@ final class ListenerRegistryPass implements CompilerPassInterface
     /**
      * {@inheritdoc}
      */
-    public function process(ContainerBuilder $container): void
+    public function process(ContainerBuilder $container)
     {
         if (!$container->has('sylius_fixtures.listener_registry')) {
             return;

@@ -48,7 +48,7 @@ final class FixtureEvent
     /**
      * @return SuiteInterface
      */
-    public function suite(): SuiteInterface
+    public function suite()
     {
         return $this->suite;
     }
@@ -56,7 +56,7 @@ final class FixtureEvent
     /**
      * @return FixtureInterface
      */
-    public function fixture(): FixtureInterface
+    public function fixture()
     {
         return $this->fixture;
     }
@@ -64,7 +64,7 @@ final class FixtureEvent
     /**
      * @return array
      */
-    public function fixtureOptions(): array
+    public function fixtureOptions()
     {
         return $this->fixtureOptions;
     }

@@ -19,5 +19,5 @@ interface BeforeSuiteListenerInterface extends ListenerInterface
      * @param SuiteEvent $suiteEvent
      * @param array $options
      */
-    public function beforeSuite(SuiteEvent $suiteEvent, array $options): void;
+    public function beforeSuite(SuiteEvent $suiteEvent, array $options);
 }

@@ -21,17 +21,17 @@ interface SuiteInterface
     /**
      * @return string
      */
-    public function getName(): string;
+    public function getName();
 
     /**
      * @return iterable|FixtureInterface[] Fixtures as keys, options as values
      */
-    public function getFixtures(): iterable;
+    public function getFixtures();
 
     /**
      * @see \Sylius\Bundle\FixturesBundle\Listener\ListenerInterface
      *
      * @return iterable|ListenerInterface[] Listeners as keys, options as values
      */
-    public function getListeners(): iterable;
+    public function getListeners();
 }

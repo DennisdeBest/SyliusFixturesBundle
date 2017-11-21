@@ -44,7 +44,7 @@ final class ORMPurgerListener extends AbstractListener implements BeforeSuiteLis
     /**
      * {@inheritdoc}
      */
-    public function beforeSuite(SuiteEvent $suiteEvent, array $options): void
+    public function beforeSuite(SuiteEvent $suiteEvent, array $options)
     {
         foreach ($options['managers'] as $managerName) {
             /** @var EntityManagerInterface $manager */
@@ -59,7 +59,7 @@ final class ORMPurgerListener extends AbstractListener implements BeforeSuiteLis
     /**
      * {@inheritdoc}
      */
-    public function getName(): string
+    public function getName()
     {
         return 'orm_purger';
     }
@@ -67,7 +67,7 @@ final class ORMPurgerListener extends AbstractListener implements BeforeSuiteLis
     /**
      * {@inheritdoc}
      */
-    protected function configureOptionsNode(ArrayNodeDefinition $optionsNode): void
+    protected function configureOptionsNode(ArrayNodeDefinition $optionsNode)
     {
         $optionsNodeBuilder = $optionsNode->children();
 

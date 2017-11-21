@@ -36,7 +36,7 @@ final class HookableSuiteLoader implements SuiteLoaderInterface
     /**
      * {@inheritdoc}
      */
-    public function load(SuiteInterface $suite): void
+    public function load(SuiteInterface $suite)
     {
         $suiteEvent = new SuiteEvent($suite);
 
@@ -51,7 +51,7 @@ final class HookableSuiteLoader implements SuiteLoaderInterface
      * @param SuiteInterface $suite
      * @param SuiteEvent $suiteEvent
      */
-    private function executeBeforeSuiteListeners(SuiteInterface $suite, SuiteEvent $suiteEvent): void
+    private function executeBeforeSuiteListeners(SuiteInterface $suite, SuiteEvent $suiteEvent)
     {
         foreach ($suite->getListeners() as $listener => $listenerOptions) {
             if (!$listener instanceof BeforeSuiteListenerInterface) {
@@ -66,7 +66,7 @@ final class HookableSuiteLoader implements SuiteLoaderInterface
      * @param SuiteInterface $suite
      * @param SuiteEvent $suiteEvent
      */
-    private function executeAfterSuiteListeners(SuiteInterface $suite, SuiteEvent $suiteEvent): void
+    private function executeAfterSuiteListeners(SuiteInterface $suite, SuiteEvent $suiteEvent)
     {
         foreach ($suite->getListeners() as $listener => $listenerOptions) {
             if (!$listener instanceof AfterSuiteListenerInterface) {

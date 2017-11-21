@@ -36,7 +36,7 @@ final class MongoDBPurgerListener extends AbstractListener implements BeforeSuit
     /**
      * {@inheritdoc}
      */
-    public function beforeSuite(SuiteEvent $suiteEvent, array $options): void
+    public function beforeSuite(SuiteEvent $suiteEvent, array $options)
     {
         foreach ($options['managers'] as $managerName) {
             /** @var DocumentManager $manager */
@@ -50,7 +50,7 @@ final class MongoDBPurgerListener extends AbstractListener implements BeforeSuit
     /**
      * {@inheritdoc}
      */
-    public function getName(): string
+    public function getName()
     {
         return 'mongodb_purger';
     }
@@ -58,7 +58,7 @@ final class MongoDBPurgerListener extends AbstractListener implements BeforeSuit
     /**
      * {@inheritdoc}
      */
-    protected function configureOptionsNode(ArrayNodeDefinition $optionsNode): void
+    protected function configureOptionsNode(ArrayNodeDefinition $optionsNode)
     {
         $optionsNode
             ->children()

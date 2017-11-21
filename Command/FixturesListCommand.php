@@ -24,7 +24,7 @@ final class FixturesListCommand extends ContainerAwareCommand
     /**
      * {@inheritdoc}
      */
-    protected function configure(): void
+    protected function configure()
     {
         $this
             ->setName('sylius:fixtures:list')
@@ -35,7 +35,7 @@ final class FixturesListCommand extends ContainerAwareCommand
     /**
      * {@inheritdoc}
      */
-    protected function execute(InputInterface $input, OutputInterface $output): void
+    protected function execute(InputInterface $input, OutputInterface $output)
     {
         $this->listSuites($output);
         $this->listFixtures($output);
@@ -44,7 +44,7 @@ final class FixturesListCommand extends ContainerAwareCommand
     /**
      * @param OutputInterface $output
      */
-    private function listSuites(OutputInterface $output): void
+    private function listSuites(OutputInterface $output)
     {
         $suites = $this->getSuiteRegistry()->getSuites();
 
@@ -58,7 +58,7 @@ final class FixturesListCommand extends ContainerAwareCommand
     /**
      * @param OutputInterface $output
      */
-    private function listFixtures(OutputInterface $output): void
+    private function listFixtures(OutputInterface $output)
     {
         $fixtures = $this->getFixtureRegistry()->getFixtures();
 

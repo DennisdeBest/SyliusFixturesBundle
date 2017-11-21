@@ -20,41 +20,41 @@ use Sylius\Bundle\FixturesBundle\Suite\SuiteInterface;
 
 final class SuiteSpec extends ObjectBehavior
 {
-    function let(): void
+    function let()
     {
         $this->beConstructedWith('suite_name');
     }
 
-    function it_implements_suite_interface(): void
+    function it_implements_suite_interface()
     {
         $this->shouldImplement(SuiteInterface::class);
     }
 
-    function it_has_name(): void
+    function it_has_name()
     {
         $this->getName()->shouldReturn('suite_name');
     }
 
-    function it_has_no_fixtures_by_default(): void
+    function it_has_no_fixtures_by_default()
     {
         $this->getFixtures()->shouldIterateAs([]);
     }
 
-    function it_allows_for_adding_a_fixture(FixtureInterface $fixture): void
+    function it_allows_for_adding_a_fixture(FixtureInterface $fixture)
     {
         $this->addFixture($fixture, []);
 
         $this->getFixtures()->shouldHaveKey($fixture);
     }
 
-    function it_stores_a_fixture_with_its_options(FixtureInterface $fixture): void
+    function it_stores_a_fixture_with_its_options(FixtureInterface $fixture)
     {
         $this->addFixture($fixture, ['fixture_option' => 'fixture_name']);
 
         $this->getFixtures()->shouldHaveKeyWithValue($fixture, ['fixture_option' => 'fixture_name']);
     }
 
-    function it_stores_multiple_fixtures_as_queue(FixtureInterface $firstFixture, FixtureInterface $secondFixture): void
+    function it_stores_multiple_fixtures_as_queue(FixtureInterface $firstFixture, FixtureInterface $secondFixture)
     {
         $this->addFixture($firstFixture, []);
         $this->addFixture($secondFixture, []);
@@ -66,7 +66,7 @@ final class SuiteSpec extends ObjectBehavior
         FixtureInterface $regularFixture,
         FixtureInterface $higherPriorityFixture,
         FixtureInterface $lowerPriorityFixture
-    ): void {
+    ) {
         $this->addFixture($regularFixture, []);
         $this->addFixture($higherPriorityFixture, [], 10);
         $this->addFixture($lowerPriorityFixture, [], -10);

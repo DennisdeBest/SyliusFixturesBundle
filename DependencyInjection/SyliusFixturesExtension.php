@@ -24,7 +24,7 @@ final class SyliusFixturesExtension extends Extension implements PrependExtensio
     /**
      * {@inheritdoc}
      */
-    public function load(array $config, ContainerBuilder $container): void
+    public function load(array $config, ContainerBuilder $container)
     {
         $config = $this->processConfiguration($this->getConfiguration([], $container), $config);
         $loader = new XmlFileLoader($container, new FileLocator(__DIR__ . '/../Resources/config'));
@@ -37,7 +37,7 @@ final class SyliusFixturesExtension extends Extension implements PrependExtensio
     /**
      * {@inheritdoc}
      */
-    public function prepend(ContainerBuilder $container): void
+    public function prepend(ContainerBuilder $container)
     {
         $loader = new XmlFileLoader($container, new FileLocator(__DIR__ . '/../Resources/config'));
 
@@ -60,7 +60,7 @@ final class SyliusFixturesExtension extends Extension implements PrependExtensio
      * @param array $config
      * @param ContainerBuilder $container
      */
-    private function registerSuites(array $config, ContainerBuilder $container): void
+    private function registerSuites(array $config, ContainerBuilder $container)
     {
         $suiteRegistry = $container->findDefinition('sylius_fixtures.suite_registry');
         foreach ($config['suites'] as $suiteName => $suiteConfiguration) {

@@ -24,7 +24,7 @@ final class FixtureRegistryPassTest extends AbstractCompilerPassTestCase
     /**
      * @test
      */
-    public function it_registers_fixtures(): void
+    public function it_registers_fixtures()
     {
         $this->setDefinition('sylius_fixtures.fixture_registry', new Definition());
         $this->setDefinition('acme.fixture', (new Definition())->addTag('sylius_fixtures.fixture'));
@@ -41,7 +41,7 @@ final class FixtureRegistryPassTest extends AbstractCompilerPassTestCase
     /**
      * {@inheritdoc}
      */
-    protected function registerCompilerPass(ContainerBuilder $container): void
+    protected function registerCompilerPass(ContainerBuilder $container)
     {
         $container->addCompilerPass(new FixtureRegistryPass());
     }
